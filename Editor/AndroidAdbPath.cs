@@ -1,13 +1,9 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEditor.Android;
 
 namespace Kogane
 {
     public static class AndroidAdbPath
     {
-        public static string Path =>
-            Application.platform == RuntimePlatform.WindowsEditor
-                ? $"{EditorApplication.applicationPath}/../Data/PlaybackEngines/AndroidPlayer/SDK/platform-tools/adb"
-                : $"{EditorApplication.applicationPath}/../PlaybackEngines/AndroidPlayer/SDK/platform-tools/adb";
+        public static string Path => $"{AndroidExternalToolsSettings.sdkRootPath}/platform-tools/adb";
     }
 }
